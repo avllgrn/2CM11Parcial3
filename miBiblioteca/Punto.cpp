@@ -60,3 +60,9 @@ double distanciaEntre(Punto A, Punto B){
         pow(B.dameTuX()-A.dameTuX(),2)
     );
 }
+Punto operator+(Punto Izquierdo, Punto Derecho){
+    Punto R;
+    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
+    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
+    return R;
+}

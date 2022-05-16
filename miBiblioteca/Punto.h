@@ -27,6 +27,6 @@ public:
     void modificaTusDatos(double x, double y);
 };
 double distanciaEntre(Punto A, Punto B);
-
+Punto operator+(Punto Izquierdo, Punto Derecho);
 
 #endif // PUNTO_H
