@@ -1,42 +1,47 @@
 #include <iostream>
 using namespace std;
 
-void suma(void);
-void suma(int a);
-void suma(int a, int b);
-void suma(float i, float j);
-void suma(string a, string b);
-
 int main(void){
+    int a;
 
-    int w = 2;
-    int x = 3;
-    float y = 2;
-    float z = 3;
-    string cad1 = "2";
-    string cad2 = "3";
+//    Operadores binarios:
+//        operandoI     operador    operandoD
 
-    suma();
-    suma(w);
-    suma(w,x);
-    suma(y,z);
-    suma(cad1,cad2);
+                //Operadores aritmeticos:
 
+            5               +           6;
+            8               -           7;
+            3               *           9;
+            10              /           2;
+            5               %           3;
+
+                //Operadores relacionales:
+            8               >           3;
+            8               >=          3;
+            8               <           3;
+            8               <=          3;
+            8               !=          3;
+            8               ==          3;
+
+                //Operadores de flujo:
+            cin             >>          a;
+            cout            <<          a;
+
+                //Operadores de incremento:
+            a               +=          6;
+            a               -=          7;
+            a               *=          9;
+            a               /=          2;
+            a               %=          3;
+
+
+//    Operadores unarios:
+//        operandoI     operador    operandoD
+
+                //Operadores de incremento:
+            a               ++           ;
+                            ++          a;
+            a               --           ;
+                            --          a;
     return 0;
-}
-
-void suma(void){
-    cout << 2 << " + " << 3 << " = " << 2+3 << endl;
-}
-void suma(int a){
-    cout << a << " + " << 3 << " = " << a+3 << endl;
-}
-void suma(int a, int b){
-    cout << a << " + " << b << " = " << a+b << endl;
-}
-void suma(float a, float b){
-    cout << a << " + " << b << " = " << a+b << endl;
-}
-void suma(string a, string b){
-    cout << a << " + " << b << " = " << "5" << endl;
 }
