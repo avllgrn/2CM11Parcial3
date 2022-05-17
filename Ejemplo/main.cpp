@@ -4,20 +4,11 @@ using namespace std;
 
 int main(void){
 
-    Punto A, B, C, D;
+    Punto A;
 
-    A.pideleAlUsuarioTusDatos();
-    B.pideleAlUsuarioTusDatos();
+    cin>>A;
 
-    if(A==B)
-        cout<<"Estan en la misma posicion =^)"<<endl;
-    else
-        cout<<"NO estan en la misma posicion =^("<<endl;
-
-    if(A!=B)
-        cout<<"NO estan en la misma posicion =^("<<endl;
-    else
-        cout<<"Estan en la misma posicion =^)"<<endl;
+    cout<<A;
 
     return 0;
 }
