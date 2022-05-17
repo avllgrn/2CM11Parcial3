@@ -31,6 +31,8 @@ Punto operator+(Punto Izquierdo, Punto Derecho);
 Punto operator-(Punto Izquierdo, Punto Derecho);
 bool operator==(Punto Izquierdo, Punto Derecho);
 bool operator!=(Punto Izquierdo, Punto Derecho);
+istream& operator>>(istream& Izquierdo, Punto& Derecho);
+ostream& operator<<(ostream& Izquierdo, Punto Derecho);
 
 
 #endif // PUNTO_H

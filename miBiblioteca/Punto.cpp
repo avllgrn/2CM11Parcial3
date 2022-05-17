@@ -87,3 +87,11 @@ bool operator!=(Punto Izquierdo, Punto Derecho){
         Izquierdo.dameTuY() != Derecho.dameTuY()
     ;
 }
+istream& operator>>(istream& Izquierdo, Punto& Derecho){
+    Derecho.pideleAlUsuarioTusDatos();
+    return Izquierdo;
+}
+ostream& operator<<(ostream& Izquierdo, Punto Derecho){
+    Derecho.muestraTusDatos();
+    return Izquierdo;
+}
