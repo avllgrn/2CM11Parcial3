@@ -28,5 +28,9 @@ public:
 };
 double distanciaEntre(Punto A, Punto B);
 Punto operator+(Punto Izquierdo, Punto Derecho);
+Punto operator-(Punto Izquierdo, Punto Derecho);
+bool operator==(Punto Izquierdo, Punto Derecho);
+bool operator!=(Punto Izquierdo, Punto Derecho);
+
 
 #endif // PUNTO_H

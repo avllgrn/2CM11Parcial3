@@ -66,3 +66,24 @@ Punto operator+(Punto Izquierdo, Punto Derecho){
     R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
     return R;
 }
+
+Punto operator-(Punto Izquierdo, Punto Derecho){
+    Punto R;
+    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
+    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
+    return R;
+}
+bool operator==(Punto Izquierdo, Punto Derecho){
+    return
+        Izquierdo.dameTuX() == Derecho.dameTuX()
+        &&
+        Izquierdo.dameTuY() == Derecho.dameTuY()
+    ;
+}
+bool operator!=(Punto Izquierdo, Punto Derecho){
+    return
+        Izquierdo.dameTuX() != Derecho.dameTuX()
+        ||
+        Izquierdo.dameTuY() != Derecho.dameTuY()
+    ;
+}
