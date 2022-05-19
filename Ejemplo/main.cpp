@@ -2,32 +2,22 @@
 #include "Punto.h"
 using namespace std;
 
-void funcion(int&a, int& b, int &c);
-
 int main(void){
-    int x,y,z;
 
-    cout<<x<<endl
-        <<y<<endl
-        <<z<<endl<<endl;
+    Punto A,B,C,D;
 
-    funcion(x,y,z);
+    cout<<"Ingresa A"<<endl;
+    cin>>A;
+    cout<<"Ingresa B"<<endl;
+    cin>>B;
 
-    cout<<x<<endl
-        <<y<<endl
-        <<z<<endl<<endl;
+    C = A+B;
+    D = A-B;
+
+    cout<<"  A"<<A<<endl
+        <<"  B"<<B<<endl
+        <<"A+B"<<C<<endl
+        <<"A-B"<<D<<endl;
 
     return 0;
-}
-
-void funcion(int&a, int& b, int &c){
-    cout<<a<<endl
-        <<b<<endl
-        <<c<<endl<<endl;
-
-    a=1;b=2;c=3;
-
-    cout<<a<<endl
-        <<b<<endl
-        <<c<<endl<<endl;
 }
