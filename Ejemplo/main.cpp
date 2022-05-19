@@ -1,23 +1,17 @@
 #include <iostream>
-#include "Punto.h"
 using namespace std;
 
 int main(void){
 
-    Punto A,B,C,D;
+    int a=5;
+    int b=3;
 
-    cout<<"Ingresa A"<<endl;
-    cin>>A;
-    cout<<"Ingresa B"<<endl;
-    cin>>B;
+    cout<<a<<endl;
+    cout<<(a + b)<<endl;
+    cout<<a<<endl<<endl;
 
-    C = A+B;
-    D = A-B;
-
-    cout<<"  A"<<A<<endl
-        <<"  B"<<B<<endl
-        <<"A+B"<<C<<endl
-        <<"A-B"<<D<<endl;
+    cout<<(a += b)<<endl;
+    cout<<a<<endl;
 
     return 0;
 }
