@@ -95,3 +95,19 @@ ostream& operator<<(ostream& Izquierdo, Punto Derecho){
     Derecho.muestraTusDatos();
     return Izquierdo;
 }
+Punto operator+=(Punto& Izquierdo, Punto Derecho){
+    Punto R;
+    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
+    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
+    Izquierdo.modificaTuX(R.dameTuX());
+    Izquierdo.modificaTuY(R.dameTuY());
+    return R;
+}
+Punto operator-=(Punto& Izquierdo, Punto Derecho){
+    Punto R;
+    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
+    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
+    Izquierdo.modificaTuX(R.dameTuX());
+    Izquierdo.modificaTuY(R.dameTuY());
+    return R;
+}
