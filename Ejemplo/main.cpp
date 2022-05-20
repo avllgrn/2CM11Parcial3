@@ -1,17 +1,31 @@
 #include <iostream>
+#include "Punto.h"
 using namespace std;
 
 int main(void){
 
-    int a=5;
-    int b=3;
+    Punto A(1,2);
+    Punto B(3,4);
 
-    cout<<a<<endl;
-    cout<<(a + b)<<endl;
-    cout<<a<<endl<<endl;
+    cout<<A<<endl;
+    cout<<B<<endl;
+    cout<<(A + B)<<endl;
+    cout<<A<<endl;
+    cout<<B<<endl<<endl;
 
-    cout<<(a += b)<<endl;
-    cout<<a<<endl;
+    cout<<(A += B)<<endl;
+    cout<<A<<endl;
+    cout<<B<<endl<<endl;
+
+    cout<<A<<endl;
+    cout<<B<<endl;
+    cout<<(A - B)<<endl;
+    cout<<A<<endl;
+    cout<<B<<endl<<endl;
+
+    cout<<(A -= B)<<endl;
+    cout<<A<<endl;
+    cout<<B<<endl<<endl;
 
     return 0;
 }
