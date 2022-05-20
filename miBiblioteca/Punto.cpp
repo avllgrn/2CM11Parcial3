@@ -111,3 +111,19 @@ Punto operator-=(Punto& Izquierdo, Punto Derecho){
     Izquierdo.modificaTuY(R.dameTuY());
     return R;
 }
+Punto operator++(Punto& Unico){//Prefijo
+    Punto R;
+    Unico.modificaTuX(Unico.dameTuX()+1);
+    Unico.modificaTuY(Unico.dameTuY()+1);
+    R.modificaTuX(Unico.dameTuX());
+    R.modificaTuY(Unico.dameTuY());
+    return R;
+}
+Punto operator++(Punto& Unico,int){//Posfijo
+    Punto R;
+    R.modificaTuX(Unico.dameTuX());
+    R.modificaTuY(Unico.dameTuY());
+    Unico.modificaTuX(Unico.dameTuX()+1);
+    Unico.modificaTuY(Unico.dameTuY()+1);
+    return R;
+}

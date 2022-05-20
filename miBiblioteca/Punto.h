@@ -35,5 +35,8 @@ istream& operator>>(istream& Izquierdo, Punto& Derecho);
 ostream& operator<<(ostream& Izquierdo, Punto Derecho);
 Punto operator+=(Punto& Izquierdo, Punto Derecho);
 Punto operator-=(Punto& Izquierdo, Punto Derecho);
+Punto operator++(Punto& Unico);//Prefijo
+Punto operator++(Punto& Unico,int);//Posfijo
+
 
 #endif // PUNTO_H
