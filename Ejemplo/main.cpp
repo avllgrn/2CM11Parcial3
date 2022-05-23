@@ -1,11 +1,11 @@
 #include <iostream>
 #include <stdlib.h>
-#include "Complejo.h"
+#include "Fraccion.h"
 using namespace std;
 
 int main(void){
 
-    Complejo A,B,C,D,E,F,G,H,I,J,K,L,M,N;
+    Fraccion A,B,C,D,E,F,G,H,I,J,K,L,M,N;
 
     cout<<"Ingresa A "<<endl;
     cin>>A;
@@ -28,16 +28,37 @@ int main(void){
     system("pause");
     system("cls");
 
-    if(A==B)
-        cout<<A<<" == "<<B<<endl;
+    if(A<B)
+        cout<<A<<"\t<\t"<<B<<endl;
     else
-        cout<<A<<" != "<<B<<endl;
+        cout<<B<<"\t<=\t"<<A<<endl;
+
+    if(A<=B)
+        cout<<A<<"\t<=\t"<<B<<endl;
+    else
+        cout<<B<<"\t<\t"<<A<<endl;
+
+    if(A>B)
+        cout<<A<<"\t>\t"<<B<<endl;
+    else
+        cout<<B<<"\t>=\t"<<A<<endl;
+
+    if(A>=B)
+        cout<<A<<"\t>=\t"<<B<<endl;
+    else
+        cout<<B<<"\t>\t"<<A<<endl;
+
+    if(A==B)
+        cout<<A<<"\t==\t"<<B<<endl;
+    else
+        cout<<A<<"\t!=\t"<<B<<endl;
 
     if(A!=B)
-        cout<<A<<" != "<<B<<endl<<endl;
+        cout<<A<<"\t!=\t"<<B<<endl;
     else
-        cout<<A<<" == "<<B<<endl<<endl;
+        cout<<A<<"\t==\t"<<B<<endl;
 
+    cout<<endl;
     system("pause");
     system("cls");
 
