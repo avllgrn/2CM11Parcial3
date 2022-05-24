@@ -53,6 +53,80 @@ void Punto::modificaTusDatos(double x, double y){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Punto Punto::operator+(Punto Derecho){
+    Punto R;
+    R.modificaTuX(this->x + Derecho.dameTuX());
+    R.modificaTuY(this->y + Derecho.dameTuY());
+    return R;
+}
+Punto Punto::operator-(Punto Derecho){
+    Punto R;
+    R.modificaTuX(this->x - Derecho.dameTuX());
+    R.modificaTuY(this->y - Derecho.dameTuY());
+    return R;
+}
+bool Punto::operator==(Punto Derecho){
+    return
+        this->x == Derecho.dameTuX()
+        &&
+        this->y == Derecho.dameTuY()
+    ;
+}
+bool Punto::operator!=(Punto Derecho){
+    return
+        this->x != Derecho.dameTuX()
+        ||
+        this->y != Derecho.dameTuY()
+    ;
+}
+Punto Punto::operator+=(Punto Derecho){
+    Punto R;
+    R.modificaTuX(this->x + Derecho.dameTuX());
+    R.modificaTuY(this->y + Derecho.dameTuY());
+    this->x = R.dameTuX();
+    this->y = R.dameTuY();
+    return R;
+}
+Punto Punto::operator-=(Punto Derecho){
+    Punto R;
+    R.modificaTuX(this->x - Derecho.dameTuX());
+    R.modificaTuY(this->y - Derecho.dameTuY());
+    this->x = R.dameTuX();
+    this->y = R.dameTuY();
+    return R;
+}
+Punto Punto::operator--(void){//Prefijo
+    Punto R;
+    --this->x;
+    --this->y;
+    R.modificaTuX(this->x);
+    R.modificaTuY(this->y);
+    return R;
+}
+
+Punto Punto::operator--(int){//Posfijo
+    Punto R;
+    R.modificaTuX(this->x);
+    R.modificaTuY(this->y);
+    --this->x;
+    --this->y;
+    return R;
+}
+
+
 double distanciaEntre(Punto A, Punto B){
     return sqrt(
         pow(B.dameTuY()-A.dameTuY(),2)
@@ -60,33 +134,32 @@ double distanciaEntre(Punto A, Punto B){
         pow(B.dameTuX()-A.dameTuX(),2)
     );
 }
-Punto operator+(Punto Izquierdo, Punto Derecho){
-    Punto R;
-    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
-    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
-    return R;
-}
-
-Punto operator-(Punto Izquierdo, Punto Derecho){
-    Punto R;
-    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
-    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
-    return R;
-}
-bool operator==(Punto Izquierdo, Punto Derecho){
-    return
-        Izquierdo.dameTuX() == Derecho.dameTuX()
-        &&
-        Izquierdo.dameTuY() == Derecho.dameTuY()
-    ;
-}
-bool operator!=(Punto Izquierdo, Punto Derecho){
-    return
-        Izquierdo.dameTuX() != Derecho.dameTuX()
-        ||
-        Izquierdo.dameTuY() != Derecho.dameTuY()
-    ;
-}
+//Punto operator+(Punto Izquierdo, Punto Derecho){
+//    Punto R;
+//    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
+//    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
+//    return R;
+//}
+//Punto operator-(Punto Izquierdo, Punto Derecho){
+//    Punto R;
+//    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
+//    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
+//    return R;
+//}
+//bool operator==(Punto Izquierdo, Punto Derecho){
+//    return
+//        Izquierdo.dameTuX() == Derecho.dameTuX()
+//        &&
+//        Izquierdo.dameTuY() == Derecho.dameTuY()
+//    ;
+//}
+//bool operator!=(Punto Izquierdo, Punto Derecho){
+//    return
+//        Izquierdo.dameTuX() != Derecho.dameTuX()
+//        ||
+//        Izquierdo.dameTuY() != Derecho.dameTuY()
+//    ;
+//}
 istream& operator>>(istream& Izquierdo, Punto& Derecho){
     Derecho.pideleAlUsuarioTusDatos();
     return Izquierdo;
@@ -95,22 +168,22 @@ ostream& operator<<(ostream& Izquierdo, Punto Derecho){
     Derecho.muestraTusDatos();
     return Izquierdo;
 }
-Punto operator+=(Punto& Izquierdo, Punto Derecho){
-    Punto R;
-    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
-    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
-    Izquierdo.modificaTuX(R.dameTuX());
-    Izquierdo.modificaTuY(R.dameTuY());
-    return R;
-}
-Punto operator-=(Punto& Izquierdo, Punto Derecho){
-    Punto R;
-    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
-    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
-    Izquierdo.modificaTuX(R.dameTuX());
-    Izquierdo.modificaTuY(R.dameTuY());
-    return R;
-}
+//Punto operator+=(Punto& Izquierdo, Punto Derecho){
+//    Punto R;
+//    R.modificaTuX(Izquierdo.dameTuX() + Derecho.dameTuX());
+//    R.modificaTuY(Izquierdo.dameTuY() + Derecho.dameTuY());
+//    Izquierdo.modificaTuX(R.dameTuX());
+//    Izquierdo.modificaTuY(R.dameTuY());
+//    return R;
+//}
+//Punto operator-=(Punto& Izquierdo, Punto Derecho){
+//    Punto R;
+//    R.modificaTuX(Izquierdo.dameTuX() - Derecho.dameTuX());
+//    R.modificaTuY(Izquierdo.dameTuY() - Derecho.dameTuY());
+//    Izquierdo.modificaTuX(R.dameTuX());
+//    Izquierdo.modificaTuY(R.dameTuY());
+//    return R;
+//}
 Punto operator++(Punto& Unico){//Prefijo
     Punto R;
     Unico.modificaTuX(Unico.dameTuX()+1);
