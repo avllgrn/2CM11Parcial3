@@ -3,19 +3,26 @@ using namespace std;
 
 int main(void){
 
-    int V[3];
+    int V[10];
+    int i;
 
-    V[2] = 123;
+    for(i=0; i<10; i++)
+        cout<<"V["<<i<<"] = "<<V[i]<<endl;
 
-    cout << V[2] << endl;
+    for(i=0; i<10; i++)
+        V[i] = 0;
 
-    cin >> V[0];
-    cout << V[0] << endl;
+    for(i=0; i<10; i++)
+        cout<<"V["<<i<<"] = "<<V[i]<<endl;
 
-    V[1] = V[2] + V[0];
-    cout << V[1] << endl;
 
-    cin>>V[10];//Error!
+    for(i=0; i<10; i++){
+        cout<<"Ingresa V["<<i<<"] ";
+        cin>>V[i];
+    }
+
+    for(i=0; i<10; i++)
+        cout<<"V["<<i<<"] = "<<V[i]<<endl;
 
     return 0;
 }
