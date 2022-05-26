@@ -2,12 +2,13 @@
 using namespace std;
 
 int main(void){
-
-    int V[10];
+    int* V;
     int i,n;
 
     cout<<"Ingresa n ";
     cin>>n;
+
+    V = new int[n];//Se solicita memoria en tiempo de ejecucion
 
     for(i=0; i<n; i++)
         cout<<"V["<<i<<"] = "<<V[i]<<endl;
@@ -18,7 +19,6 @@ int main(void){
     for(i=0; i<n; i++)
         cout<<"V["<<i<<"] = "<<V[i]<<endl;
 
-
     for(i=0; i<n; i++){
         cout<<"Ingresa V["<<i<<"] ";
         cin>>V[i];
@@ -26,6 +26,8 @@ int main(void){
 
     for(i=0; i<n; i++)
         cout<<"V["<<i<<"] = "<<V[i]<<endl;
+
+    delete[] V;//Se libera la memoria solicitada en tiempo de ejecucion
 
     return 0;
 }
