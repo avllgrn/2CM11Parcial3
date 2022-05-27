@@ -3,6 +3,12 @@
 #include "Punto.h"
 using namespace std;
 
+void leeVector(Punto* X, int n);
+void muestraVector(Punto* X, int n);
+void sumaVectores(Punto* X, Punto* Y, Punto* Z, int n);
+void restaVectores(Punto* X, Punto* Y, Punto* Z, int n);
+
+
 int main(void){
     Punto* V1;
     Punto* V2;
@@ -24,36 +30,28 @@ int main(void){
         V3 = new Punto[n1];//Se solicita memoria en tiempo de ejecucion
         V4 = new Punto[n1];//Se solicita memoria en tiempo de ejecucion
 
-        for(i=0; i<n1; i++){
-            cout<<"Ingresa V1["<<i<<"] "<<endl;
-            cin>>V1[i];
-            cout<<endl;
-        }
+        cout<<"Ingresa V1"<<endl;
+        leeVector(V1,n1);
         system("cls");
-        for(i=0; i<n2; i++){
-            cout<<"Ingresa V2["<<i<<"] "<<endl;
-            cin>>V2[i];
-            cout<<endl;
-        }
+        cout<<"Ingresa V2"<<endl;
+        leeVector(V2,n2);
         system("cls");
-        for(i=0; i<n1; i++){
-            V3[i] = V1[i] + V2[i];
-            V4[i] = V1[i] - V2[i];
-        }
 
-        for(i=0; i<n1; i++){
-            cout<<V1[i]<<"\t+\t";
-            cout<<V2[i]<<"\t=\t";
-            cout<<V3[i]<<endl;
-        }
+        sumaVectores(V1,V2,V3,n1);
+        restaVectores(V1,V2,V4,n1);
 
         cout<<endl;
-
-        for(i=0; i<n1; i++){
-            cout<<V1[i]<<"\t-\t";
-            cout<<V2[i]<<"\t=\t";
-            cout<<V4[i]<<endl;
-        }
+        cout<<"V1"<<endl;
+        muestraVector(V1,n1);
+        cout<<endl;
+        cout<<"V2"<<endl;
+        muestraVector(V2,n2);
+        cout<<endl;
+        cout<<"V1+V2"<<endl;
+        muestraVector(V3,n1);
+        cout<<endl;
+        cout<<"V1-V2"<<endl;
+        muestraVector(V4,n1);
 
         delete[] V1;//Se libera la memoria solicitada en tiempo de ejecucion
         delete[] V2;//Se libera la memoria solicitada en tiempo de ejecucion
@@ -62,4 +60,31 @@ int main(void){
     }
 
     return 0;
+}
+
+void leeVector(Punto* X, int n){
+    int i;
+    for(i=0; i<n; i++){
+        cout<<"Ingresa ["<<i<<"] "<<endl;
+        cin>>X[i];
+        cout<<endl;
+    }
+}
+void muestraVector(Punto* X, int n){
+    int i;
+    for(i=0; i<n; i++){
+        cout<<X[i]<<endl;
+    }
+}
+void sumaVectores(Punto* X, Punto* Y, Punto* Z, int n){
+    int i;
+    for(i=0; i<n; i++){
+        Z[i] = X[i] + Y[i];
+    }
+}
+void restaVectores(Punto* X, Punto* Y, Punto* Z, int n){
+    int i;
+    for(i=0; i<n; i++){
+        Z[i] = X[i] - Y[i];
+    }
 }
