@@ -1,8 +1,9 @@
 #include <iostream>
+#include "Punto.h"
 using namespace std;
 
 int main(void){
-    int** M;
+    Punto** M;
     int m,n,i,j;
 
     cout<<"Ingresa m ";
@@ -10,14 +11,24 @@ int main(void){
     cout<<"Ingresa n ";
     cin>>n;
 
-    M = new int*[m];      //Se reserva dinamicamente memoria
+    M = new Punto*[m];      //Se reserva dinamicamente memoria
     for(i=0; i<m; i++)      //para una matriz de m filas y
-        M[i] = new int[n];//n columnas
+        M[i] = new Punto[n];//n columnas
 
 
-    for(i=0;i<m;i++)
+    for(i=0;i<m;i++){
         for(j=0;j<n;j++)
-            M[i][j] = 0;
+            cout<<M[i][j]<<"\t";
+        cout<<endl;
+    }
+
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            cout<<endl<<"Ingresa M["<<i<<"]["<<j<<"] "<<endl;
+            cin>>M[i][j];
+        }
+        cout<<endl;
+    }
 
     for(i=0;i<m;i++){
         for(j=0;j<n;j++)
