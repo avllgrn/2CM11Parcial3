@@ -1,11 +1,17 @@
 #include <iostream>
+#include "Punto.h"
 using namespace std;
 
+void leeMatriz(Punto** X, int m, int n);
+void muestraMatriz(Punto** X, int m, int n);
+void sumaMatrices(Punto** X, Punto** Y, Punto** Z, int m, int n);
+void restaMatrizces(Punto** X, Punto** Y, Punto** Z, int m, int n);
+
 int main(void){
-    int** A;
-    int** B;
-    int** C;
-    int** D;
+    Punto** A;
+    Punto** B;
+    Punto** C;
+    Punto** D;
     int m1,n1,m2,n2,i,j;
 
     cout<<"Ingresa m1 ";
@@ -20,81 +26,43 @@ int main(void){
     if(m1!=m2 || n1!=n2)
         cout<<"Error! No pueden sumarse ni restarse... =^("<<endl;
     else{
-        A = new int*[m1];      //Se reserva dinamicamente memoria
+        A = new Punto*[m1];      //Se reserva dinamicamente memoria
         for(i=0; i<m1; i++)      //para una matriz de m1 filas y
-            A[i] = new int[n1];//n1 columnas
+            A[i] = new Punto[n1];//n1 columnas
 
-        B = new int*[m2];      //Se reserva dinamicamente memoria
+        B = new Punto*[m2];      //Se reserva dinamicamente memoria
         for(i=0; i<m2; i++)      //para una matriz de m1 filas y
-            B[i] = new int[n2];//n1 columnas
+            B[i] = new Punto[n2];//n1 columnas
 
-        C = new int*[m2];      //Se reserva dinamicamente memoria
+        C = new Punto*[m2];      //Se reserva dinamicamente memoria
         for(i=0; i<m2; i++)      //para una matriz de m1 filas y
-            C[i] = new int[n2];//n1 columnas
+            C[i] = new Punto[n2];//n1 columnas
 
-        D = new int*[m2];      //Se reserva dinamicamente memoria
+        D = new Punto*[m2];      //Se reserva dinamicamente memoria
         for(i=0; i<m2; i++)      //para una matriz de m1 filas y
-            D[i] = new int[n2];//n1 columnas
+            D[i] = new Punto[n2];//n1 columnas
 
-
-        for(i=0;i<m1;i++){
-            for(j=0;j<n1;j++){
-                cout<<endl<<"Ingresa A["<<i<<"]["<<j<<"] "<<endl;
-                cin>>A[i][j];
-            }
-            cout<<endl;
-        }
+        cout<<endl<<"Ingresa A"<<endl;
+        leeMatriz(A,m1,n1);
+        cout<<endl<<endl;
+        cout<<endl<<"Ingresa A"<<endl;
+        leeMatriz(B,m2,n2);
         cout<<endl<<endl;
 
-        for(i=0;i<m2;i++){
-            for(j=0;j<n2;j++){
-                cout<<endl<<"Ingresa B["<<i<<"]["<<j<<"] "<<endl;
-                cin>>B[i][j];
-            }
-            cout<<endl;
-        }
-        cout<<endl<<endl;
-
-
-        for(i=0;i<m1;i++)
-            for(j=0;j<n2;j++)
-                C[i][j] = A[i][j] + B[i][j];
-
-        for(i=0;i<m1;i++)
-            for(j=0;j<n2;j++)
-                D[i][j] = A[i][j] - B[i][j];
-
+        sumaMatrices(A,B,C,m1,n2);
+        restaMatrizces(A,B,D,m1,n2);
 
         cout<<"A"<<endl;
-        for(i=0;i<m1;i++){
-            for(j=0;j<n1;j++)
-                cout<<A[i][j]<<"\t";
-            cout<<endl;
-        }
+        muestraMatriz(A,m1,n1);
         cout<<endl<<endl;
-
         cout<<"B"<<endl;
-        for(i=0;i<m2;i++){
-            for(j=0;j<n2;j++)
-                cout<<B[i][j]<<"\t";
-            cout<<endl;
-        }
+        muestraMatriz(B,m2,n2);
         cout<<endl<<endl;
-
         cout<<"C"<<endl;
-        for(i=0;i<m1;i++){
-            for(j=0;j<n2;j++)
-                cout<<C[i][j]<<"\t";
-            cout<<endl;
-        }
+        muestraMatriz(C,m1,n2);
         cout<<endl<<endl;
-
         cout<<"D"<<endl;
-        for(i=0;i<m1;i++){
-            for(j=0;j<n2;j++)
-                cout<<D[i][j]<<"\t";
-            cout<<endl;
-        }
+        muestraMatriz(D,m1,n2);
         cout<<endl<<endl;
 
         //Se libera la memoria que se reservo para una matriz de m1 filas y n1 columnas, en tiempo de ejecucion
@@ -121,4 +89,37 @@ int main(void){
 
 
     return 0;
+}
+
+void leeMatriz(Punto** X, int m, int n){
+    int i,j;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            cout<<endl<<"Ingresa ["<<i<<"]["<<j<<"] "<<endl;
+            cin>>X[i][j];
+        }
+        cout<<endl;
+    }
+}
+void muestraMatriz(Punto** X, int m, int n){
+    int i,j;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++)
+            cout<<X[i][j]<<"\t";
+        cout<<endl;
+    }
+}
+void sumaMatrices(Punto** X, Punto** Y, Punto** Z, int m, int n){
+    int i,j;
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+            Z[i][j] = X[i][j] + Y[i][j];
+
+}
+void restaMatrizces(Punto** X, Punto** Y, Punto** Z, int m, int n){
+    int i,j;
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+            Z[i][j] = X[i][j] - Y[i][j];
+
 }
