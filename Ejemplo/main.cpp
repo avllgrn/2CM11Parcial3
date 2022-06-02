@@ -1,50 +1,58 @@
 #include <iostream>
+#include <stdlib.h>
 #include "Nodo.h"
 using namespace std;
 
 int main(void){
-    Nodo  A;
-    Nodo  B(1,&A);
-    Nodo  C(2,&B);
-    Nodo  D(3,&C);
-    Nodo* tope=&D;
+    Nodo* tope;
+    Nodo* aux;
+    int d;
 
-    cout<<"&A   = "<<&A<<endl
-        <<"&B   = "<<&B<<endl
-        <<"&C   = "<<&C<<endl
-        <<"&D   = "<<&D<<endl<<endl
-        <<"tope = "<<tope<<endl;
+    tope = NULL;
 
-    D.muestraTusDatos();
-    C.muestraTusDatos();
-    B.muestraTusDatos();
-    A.muestraTusDatos();
+    if(tope==NULL)
+        cout<<"Pila vacia"<<endl;
 
-    cout<<endl<<endl;
+    tope = new Nodo(5,tope);system("pause");
+    tope = new Nodo(3,tope);system("pause");
+    tope = new Nodo(7,tope);system("pause");
+    tope = new Nodo(-4,tope);system("pause");
 
-    cout<<"A"<<endl;
-    A.pideleAlUsuarioTusDatos();
-    cout<<"B"<<endl;
-    B.pideleAlUsuarioTusDatos();
-    cout<<"C"<<endl;
-    C.pideleAlUsuarioTusDatos();
-    cout<<"D"<<endl;
-    D.pideleAlUsuarioTusDatos();
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    cout<<endl<<endl;
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    cout<<"&A   = "<<&A<<endl
-        <<"&B   = "<<&B<<endl
-        <<"&C   = "<<&C<<endl
-        <<"&D   = "<<&D<<endl<<endl
-        <<"tope = "<<tope<<endl;
 
-    D.muestraTusDatos();
-    C.muestraTusDatos();
-    B.muestraTusDatos();
-    A.muestraTusDatos();
+    tope = new Nodo(9,tope);system("pause");
 
-    cout<<endl<<endl;
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
+
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
+
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
+
+    if(tope==NULL)
+        cout<<"Pila vacia"<<endl;
 
     return 0;
 }
