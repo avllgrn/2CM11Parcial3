@@ -1,57 +1,26 @@
 #include <iostream>
 #include <stdlib.h>
-#include "Nodo.h"
+#include "Pila.h"
 using namespace std;
 
 int main(void){
-    Nodo* tope;
-    Nodo* aux;
-    int d;
-
-    tope = NULL;
-
-    if(tope==NULL)
+    Pila P;
+    if(P.estaVacia())
         cout<<"Pila vacia"<<endl;
 
-    tope = new Nodo(5,tope);system("pause");
-    tope = new Nodo(3,tope);system("pause");
-    tope = new Nodo(7,tope);system("pause");
-    tope = new Nodo(-4,tope);system("pause");
+    P.push(5);system("pause");
+    P.push(3);system("pause");
+    P.push(7);system("pause");
+    P.push(-4);system("pause");
 
-    d = tope->dameTuDato();
-    aux = tope;
-    tope = tope->dameTuInferior();
-    delete aux;
-    cout<<d<<endl;system("pause");
+    cout<<P.pop()<<endl;system("pause");
+    cout<<P.pop()<<endl;system("pause");
+    P.push(9);system("pause");
+    cout<<P.pop()<<endl;system("pause");
+    cout<<P.pop()<<endl;system("pause");
+    cout<<P.pop()<<endl;system("pause");
 
-    d = tope->dameTuDato();
-    aux = tope;
-    tope = tope->dameTuInferior();
-    delete aux;
-    cout<<d<<endl;system("pause");
-
-
-    tope = new Nodo(9,tope);system("pause");
-
-    d = tope->dameTuDato();
-    aux = tope;
-    tope = tope->dameTuInferior();
-    delete aux;
-    cout<<d<<endl;system("pause");
-
-    d = tope->dameTuDato();
-    aux = tope;
-    tope = tope->dameTuInferior();
-    delete aux;
-    cout<<d<<endl;system("pause");
-
-    d = tope->dameTuDato();
-    aux = tope;
-    tope = tope->dameTuInferior();
-    delete aux;
-    cout<<d<<endl;system("pause");
-
-    if(tope==NULL)
+    if(P.estaVacia())
         cout<<"Pila vacia"<<endl;
 
     return 0;
