@@ -5,23 +5,45 @@ using namespace std;
 
 int main(void){
     Pila P;
-    if(P.estaVacia())
-        cout<<"Pila vacia"<<endl;
+    int op,d;
 
-    P.push(5);system("pause");
-    P.push(3);system("pause");
-    P.push(7);system("pause");
-    P.push(-4);system("pause");
+    do{
+        system("cls");
+        cout<<"1. push"<<endl
+            <<"2. pop"<<endl
+            <<"3. libera Pila"<<endl
+            <<"4. Salir"<<endl
+            <<"Cual es tu opcion? ";
+        cin>>op;
+        system("cls");
+        switch(op){
+            case 1:
+                cout<<"Ingresa dato ";cin>>d;
+                P.push(d);
+                break;
+            case 2:
+                if(P.estaVacia()){
+                    cout<<"La pila esta vacia... =("<<endl;
+                }
+                else{
+                    d = P.pop();
+                    cout<<"Salio nodo con dato "<<d<<endl<<endl;
+                }
+                break;
+            case 3:
+                P.liberaPila();
+                break;
+            case 4:
+                cout<<"Adios! =)"<<endl<<endl;
+                break;
+            default :
+                cout<<"Opcion invalida...! =("<<endl<<endl;
+                break;
+        }
+        if(op!=4)
+            system("pause");
 
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    P.push(9);system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-
-    if(P.estaVacia())
-        cout<<"Pila vacia"<<endl;
+    }while(op!=4);
 
     return 0;
 }
