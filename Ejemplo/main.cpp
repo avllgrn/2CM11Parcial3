@@ -1,10 +1,8 @@
 #include <iostream>
+#include <typeinfo>
 using namespace std;
 
-int suma(int x, int y);
-float suma(float x, float y);
-long suma(long x, long y);
-double suma(double x, double y);
+template<typename T> T suma(T x, T y);
 
 int main(void){
     int a,b,c;
@@ -38,27 +36,9 @@ int main(void){
     return 0;
 }
 
-int suma(int x, int y){
-    int z;
-    cout<<"suma "<<"int"<<endl;
-    z = x+y;
-    return z;
-}
-float suma(float x, float y){
-    float z;
-    cout<<"suma "<<"float"<<endl;
-    z = x+y;
-    return z;
-}
-long suma(long x, long y){
-    float z;
-    cout<<"suma "<<"long"<<endl;
-    z = x+y;
-    return z;
-}
-double suma(double x, double y){
-    double z;
-    cout<<"suma "<<"double"<<endl;
+template<typename T> T suma(T x, T y){
+    T z;
+    cout<<"suma "<<typeid(x).name()<<endl;
     z = x+y;
     return z;
 }
