@@ -118,3 +118,95 @@ Complejo divide(Complejo A, Complejo B){
     );
     return R;
 }
+istream& operator>>(istream& Izquierdo, Complejo& Derecho){
+    Derecho.pideleAlUsuarioTusDatos();
+    return Izquierdo;
+}
+ostream& operator<<(ostream& Izquierdo, Complejo& Derecho){
+    Derecho.muestraTusDatos();
+    return Izquierdo;
+}
+Complejo operator+(Complejo Izquierdo, Complejo Derecho){
+    return suma(Izquierdo,Derecho);
+}
+Complejo operator-(Complejo Izquierdo, Complejo Derecho){
+    return resta(Izquierdo,Derecho);
+}
+Complejo operator*(Complejo Izquierdo, Complejo Derecho){
+    return multiplica(Izquierdo,Derecho);
+}
+Complejo operator/(Complejo Izquierdo, Complejo Derecho){
+    return divide(Izquierdo,Derecho);
+}
+bool operator==(Complejo Izquierdo, Complejo Derecho){
+    return
+        Izquierdo.dameTuReal() == Derecho.dameTuReal()
+        &&
+        Izquierdo.dameTuImaginario() == Derecho.dameTuImaginario();
+}
+bool operator!=(Complejo Izquierdo, Complejo Derecho){
+    return
+        Izquierdo.dameTuReal() != Derecho.dameTuReal()
+        ||
+        Izquierdo.dameTuImaginario() != Derecho.dameTuImaginario();
+}
+Complejo operator+=(Complejo& Izquierdo, Complejo Derecho){
+    Complejo R;
+    R = suma(Izquierdo,Derecho);
+    Izquierdo.modificaTuReal(R.dameTuReal());
+    Izquierdo.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator-=(Complejo& Izquierdo, Complejo Derecho){
+    Complejo R;
+    R = resta(Izquierdo,Derecho);
+    Izquierdo.modificaTuReal(R.dameTuReal());
+    Izquierdo.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator*=(Complejo& Izquierdo, Complejo Derecho){
+    Complejo R;
+    R = multiplica(Izquierdo,Derecho);
+    Izquierdo.modificaTuReal(R.dameTuReal());
+    Izquierdo.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator/=(Complejo& Izquierdo, Complejo Derecho){
+    Complejo R;
+    R = divide(Izquierdo,Derecho);
+    Izquierdo.modificaTuReal(R.dameTuReal());
+    Izquierdo.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator++(Complejo& Unico){
+    Complejo R;
+    R.modificaTuReal(Unico.dameTuReal()+1);
+    R.modificaTuImaginario(Unico.dameTuImaginario()+1);
+    Unico.modificaTuReal(R.dameTuReal());
+    Unico.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator++(Complejo& Unico, int){
+    Complejo R;
+    R.modificaTuReal(Unico.dameTuReal());
+    R.modificaTuImaginario(Unico.dameTuImaginario());
+    Unico.modificaTuReal(R.dameTuReal()+1);
+    Unico.modificaTuImaginario(R.dameTuImaginario()+1);
+    return R;
+}
+Complejo operator--(Complejo& Unico){
+    Complejo R;
+    R.modificaTuReal(Unico.dameTuReal()-1);
+    R.modificaTuImaginario(Unico.dameTuImaginario()-1);
+    Unico.modificaTuReal(R.dameTuReal());
+    Unico.modificaTuImaginario(R.dameTuImaginario());
+    return R;
+}
+Complejo operator--(Complejo& Unico, int){
+    Complejo R;
+    R.modificaTuReal(Unico.dameTuReal());
+    R.modificaTuImaginario(Unico.dameTuImaginario());
+    Unico.modificaTuReal(R.dameTuReal()-1);
+    Unico.modificaTuImaginario(R.dameTuImaginario()-1);
+    return R;
+}
