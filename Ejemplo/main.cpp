@@ -1,44 +1,50 @@
 #include <iostream>
-#include <typeinfo>
+#include "TNodo.h"
 using namespace std;
 
-template<typename T> T suma(T x, T y);
-
 int main(void){
-    int a,b,c;
+    TNodo<char>  A;
+    TNodo<char>  B('@',&A);
+    TNodo<char>  C('#',&B);
+    TNodo<char>  D('&',&C);
+    TNodo<char>* tope=&D;
 
-    cout<<"Igresa a ";cin>>a;
-    cout<<"Igresa b ";cin>>b;
-    c=suma(a,b);
-    cout<<a<<" + "<<b<<" = "<<c<<endl;
+    cout<<"&A   = "<<&A<<endl
+        <<"&B   = "<<&B<<endl
+        <<"&C   = "<<&C<<endl
+        <<"&D   = "<<&D<<endl<<endl
+        <<"tope = "<<tope<<endl;
 
-    float d,e,f;
+    D.muestraTusDatos();
+    C.muestraTusDatos();
+    B.muestraTusDatos();
+    A.muestraTusDatos();
 
-    cout<<"Igresa d ";cin>>d;
-    cout<<"Igresa e ";cin>>e;
-    f=suma(d,e);
-    cout<<d<<" + "<<e<<" = "<<f<<endl;
+    cout<<endl<<endl;
 
-    long g,h,i;
+    cout<<"A"<<endl;
+    A.pideleAlUsuarioTusDatos();
+    cout<<"B"<<endl;
+    B.pideleAlUsuarioTusDatos();
+    cout<<"C"<<endl;
+    C.pideleAlUsuarioTusDatos();
+    cout<<"D"<<endl;
+    D.pideleAlUsuarioTusDatos();
 
-    cout<<"Igresa g ";cin>>g;
-    cout<<"Igresa h ";cin>>h;
-    i=suma(g,h);
-    cout<<g<<" + "<<h<<" = "<<i<<endl;
+    cout<<endl<<endl;
 
-    double j,k,l;
+    cout<<"&A   = "<<&A<<endl
+        <<"&B   = "<<&B<<endl
+        <<"&C   = "<<&C<<endl
+        <<"&D   = "<<&D<<endl<<endl
+        <<"tope = "<<tope<<endl;
 
-    cout<<"Igresa j ";cin>>j;
-    cout<<"Igresa k ";cin>>k;
-    l=suma(j,k);
-    cout<<j<<" + "<<k<<" = "<<l<<endl;
+    D.muestraTusDatos();
+    C.muestraTusDatos();
+    B.muestraTusDatos();
+    A.muestraTusDatos();
+
+    cout<<endl<<endl;
 
     return 0;
-}
-
-template<typename T> T suma(T x, T y){
-    T z;
-    cout<<"suma "<<typeid(x).name()<<endl;
-    z = x+y;
-    return z;
 }
