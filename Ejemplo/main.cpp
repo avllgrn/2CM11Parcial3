@@ -1,28 +1,22 @@
 #include <iostream>
 #include <stdlib.h>
 #include "TNodo.h"
-#include "Complejo.h"
 using namespace std;
 
 int main(void){
-    Complejo Temporal;
-    TNodo<Complejo>* tope;
-    TNodo<Complejo>* aux;
-    Complejo d;
+    TNodo<float>* tope;
+    TNodo<float>* aux;
+    float d;
 
     tope = NULL;
 
     if(tope==NULL)
         cout<<"Pila vacia"<<endl;
 
-    Temporal.modificaTusDatos(1,2);
-    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
-    Temporal.modificaTusDatos(4,5);
-    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
-    Temporal.modificaTusDatos(7,8);
-    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
-    Temporal.modificaTusDatos(8,7);
-    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
+    tope = new TNodo<float>(1.2,tope);system("pause");
+    tope = new TNodo<float>(3.4,tope);system("pause");
+    tope = new TNodo<float>(5.6,tope);system("pause");
+    tope = new TNodo<float>(7.8,tope);system("pause");
 
     d = tope->dameTuDato();
     aux = tope;
@@ -37,8 +31,7 @@ int main(void){
     cout<<d<<endl;system("pause");
 
 
-    Temporal.modificaTusDatos(5,4);
-    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
+    tope = new TNodo<float>(9.8,tope);system("pause");
 
     d = tope->dameTuDato();
     aux = tope;
