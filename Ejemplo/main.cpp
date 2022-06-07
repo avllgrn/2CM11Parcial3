@@ -1,55 +1,65 @@
 #include <iostream>
+#include <stdlib.h>
 #include "TNodo.h"
-#include "Fraccion.h"
+#include "Complejo.h"
 using namespace std;
 
 int main(void){
-    Fraccion Temporal;
-    TNodo<Fraccion>  A;
+    Complejo Temporal;
+    TNodo<Complejo>* tope;
+    TNodo<Complejo>* aux;
+    Complejo d;
+
+    tope = NULL;
+
+    if(tope==NULL)
+        cout<<"Pila vacia"<<endl;
+
     Temporal.modificaTusDatos(1,2);
-    TNodo<Fraccion>  B(Temporal,&A);
-    Temporal.modificaTusDatos(3,4);
-    TNodo<Fraccion>  C(Temporal,&B);
-    Temporal.modificaTusDatos(5.6,7.8);
-    TNodo<Fraccion>  D(Temporal,&C);
-    TNodo<Fraccion>* tope=&D;
+    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
+    Temporal.modificaTusDatos(4,5);
+    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
+    Temporal.modificaTusDatos(7,8);
+    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
+    Temporal.modificaTusDatos(8,7);
+    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
 
-    cout<<"&A   = "<<&A<<endl
-        <<"&B   = "<<&B<<endl
-        <<"&C   = "<<&C<<endl
-        <<"&D   = "<<&D<<endl<<endl
-        <<"tope = "<<tope<<endl;
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    D.muestraTusDatos();
-    C.muestraTusDatos();
-    B.muestraTusDatos();
-    A.muestraTusDatos();
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    cout<<endl<<endl;
 
-    cout<<"A"<<endl;
-    A.pideleAlUsuarioTusDatos();
-    cout<<"B"<<endl;
-    B.pideleAlUsuarioTusDatos();
-    cout<<"C"<<endl;
-    C.pideleAlUsuarioTusDatos();
-    cout<<"D"<<endl;
-    D.pideleAlUsuarioTusDatos();
+    Temporal.modificaTusDatos(5,4);
+    tope = new TNodo<Complejo>(Temporal,tope);system("pause");
 
-    cout<<endl<<endl;
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    cout<<"&A   = "<<&A<<endl
-        <<"&B   = "<<&B<<endl
-        <<"&C   = "<<&C<<endl
-        <<"&D   = "<<&D<<endl<<endl
-        <<"tope = "<<tope<<endl;
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    D.muestraTusDatos();
-    C.muestraTusDatos();
-    B.muestraTusDatos();
-    A.muestraTusDatos();
+    d = tope->dameTuDato();
+    aux = tope;
+    tope = tope->dameTuInferior();
+    delete aux;
+    cout<<d<<endl;system("pause");
 
-    cout<<endl<<endl;
+    if(tope==NULL)
+        cout<<"Pila vacia"<<endl;
 
     return 0;
 }
