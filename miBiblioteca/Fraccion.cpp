@@ -96,3 +96,121 @@ Fraccion divide(Fraccion A, Fraccion B){
     );
     return F;
 }
+istream& operator>>(istream& Izquierdo, Fraccion& Derecho){
+    Derecho.pideleAlUsuarioTusDatos();
+    return Izquierdo;
+}
+ostream& operator<<(ostream& Izquierdo, Fraccion& Derecho){
+    Derecho.muestraTusDatos();
+    return Izquierdo;
+}
+Fraccion operator+(Fraccion Izquierdo, Fraccion Derecho){
+    return suma(Izquierdo,Derecho);
+}
+Fraccion operator-(Fraccion Izquierdo, Fraccion Derecho){
+    return resta(Izquierdo,Derecho);
+}
+Fraccion operator*(Fraccion Izquierdo, Fraccion Derecho){
+    return multiplica(Izquierdo,Derecho);
+}
+Fraccion operator/(Fraccion Izquierdo, Fraccion Derecho){
+    return divide(Izquierdo,Derecho);
+}
+bool operator<(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador()*Derecho.dameTuDenominador()
+        <
+        Derecho.dameTuNumerador()*Izquierdo.dameTuDenominador()
+    ;
+}
+bool operator<=(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador()*Derecho.dameTuDenominador()
+        <=
+        Derecho.dameTuNumerador()*Izquierdo.dameTuDenominador()
+    ;
+}
+bool operator>(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador()*Derecho.dameTuDenominador()
+        >
+        Derecho.dameTuNumerador()*Izquierdo.dameTuDenominador()
+    ;
+}
+bool operator>=(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador()*Derecho.dameTuDenominador()
+        >=
+        Derecho.dameTuNumerador()*Izquierdo.dameTuDenominador()
+    ;
+}
+bool operator==(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador() == Derecho.dameTuNumerador()
+        &&
+        Izquierdo.dameTuDenominador() == Derecho.dameTuDenominador()
+    ;
+}
+bool operator!=(Fraccion Izquierdo, Fraccion Derecho){
+    return
+        Izquierdo.dameTuNumerador() != Derecho.dameTuNumerador()
+        ||
+        Izquierdo.dameTuDenominador() != Derecho.dameTuDenominador()
+    ;
+}
+Fraccion operator+=(Fraccion& Izquierdo, Fraccion Derecho){
+    Fraccion R;
+    R = suma(Izquierdo,Derecho);
+    Izquierdo.modificaTuNumerador(R.dameTuNumerador());
+    Izquierdo.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator-=(Fraccion& Izquierdo, Fraccion Derecho){
+    Fraccion R;
+    R = resta(Izquierdo,Derecho);
+    Izquierdo.modificaTuNumerador(R.dameTuNumerador());
+    Izquierdo.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator*=(Fraccion& Izquierdo, Fraccion Derecho){
+    Fraccion R;
+    R = multiplica(Izquierdo,Derecho);
+    Izquierdo.modificaTuNumerador(R.dameTuNumerador());
+    Izquierdo.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator/=(Fraccion& Izquierdo, Fraccion Derecho){
+    Fraccion R;
+    R = divide(Izquierdo,Derecho);
+    Izquierdo.modificaTuNumerador(R.dameTuNumerador());
+    Izquierdo.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator++(Fraccion& Unico){
+    Fraccion R, Uno(1,1);
+    R=Unico+Uno;
+    Unico.modificaTuNumerador(R.dameTuNumerador());
+    Unico.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator++(Fraccion& Unico, int){
+    Fraccion R, Uno(1,1);
+    R.modificaTuNumerador(Unico.dameTuNumerador());
+    R.modificaTuDenominador(Unico.dameTuDenominador());
+    Unico+=Uno;
+    return R;
+}
+Fraccion operator--(Fraccion& Unico){
+    Fraccion R, Uno(1,1);
+    R=Unico-Uno;
+    Unico.modificaTuNumerador(R.dameTuNumerador());
+    Unico.modificaTuDenominador(R.dameTuDenominador());
+    return R;
+}
+Fraccion operator--(Fraccion& Unico, int){
+    Fraccion R, Uno(1,1);
+    R.modificaTuNumerador(Unico.dameTuNumerador());
+    R.modificaTuDenominador(Unico.dameTuDenominador());
+    Unico-=Uno;
+    return R;
+}
