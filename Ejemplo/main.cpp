@@ -1,11 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 #include "TPila.h"
+#include "Fraccion.h"
 using namespace std;
 
 int main(void){
-    TPila<char> P;
-    char d;
+    TPila<Fraccion> P;
+    Fraccion d;
     int op;
 
     do{
