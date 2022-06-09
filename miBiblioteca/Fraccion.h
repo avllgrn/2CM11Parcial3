@@ -29,7 +29,7 @@ Fraccion resta(Fraccion A, Fraccion B);
 Fraccion multiplica(Fraccion A, Fraccion B);
 Fraccion divide(Fraccion A, Fraccion B);
 istream& operator>>(istream& Izquierdo, Fraccion& Derecho);
-ostream& operator<<(ostream& Izquierdo, Fraccion& Derecho);
+ostream& operator<<(ostream& Izquierdo, Fraccion Derecho);
 Fraccion operator+(Fraccion Izquierdo, Fraccion Derecho);
 Fraccion operator-(Fraccion Izquierdo, Fraccion Derecho);
 Fraccion operator*(Fraccion Izquierdo, Fraccion Derecho);

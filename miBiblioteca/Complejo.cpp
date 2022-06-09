@@ -122,7 +122,7 @@ istream& operator>>(istream& Izquierdo, Complejo& Derecho){
     Derecho.pideleAlUsuarioTusDatos();
     return Izquierdo;
 }
-ostream& operator<<(ostream& Izquierdo, Complejo& Derecho){
+ostream& operator<<(ostream& Izquierdo, Complejo Derecho){
     Derecho.muestraTusDatos();
     return Izquierdo;
 }

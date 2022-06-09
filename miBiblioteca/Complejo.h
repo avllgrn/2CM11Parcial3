@@ -31,7 +31,7 @@ Complejo resta(Complejo A, Complejo B);
 Complejo multiplica(Complejo A, Complejo B);
 Complejo divide(Complejo A, Complejo B);
 istream& operator>>(istream& Izquierdo, Complejo& Derecho);
-ostream& operator<<(ostream& Izquierdo, Complejo& Derecho);
+ostream& operator<<(ostream& Izquierdo, Complejo Derecho);
 Complejo operator+(Complejo Izquierdo, Complejo Derecho);
 Complejo operator-(Complejo Izquierdo, Complejo Derecho);
 Complejo operator*(Complejo Izquierdo, Complejo Derecho);

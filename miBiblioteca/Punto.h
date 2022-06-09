@@ -34,7 +34,7 @@ public:
     Punto operator--(void);//Prefijo
     Punto operator--(int);//Posfijo
 };
-double distanciaEntre(Punto A, Punto B);
+double distanciaEntre(Punto P, Punto Q);
 //Punto operator+(Punto Izquierdo, Punto Derecho);
 //Punto operator-(Punto Izquierdo, Punto Derecho);
 //bool operator==(Punto Izquierdo, Punto Derecho);
@@ -45,6 +45,5 @@ ostream& operator<<(ostream& Izquierdo, Punto Derecho);
 //Punto operator-=(Punto& Izquierdo, Punto Derecho);
 Punto operator++(Punto& Unico);//Prefijo
 Punto operator++(Punto& Unico,int);//Posfijo
-
 
 #endif // PUNTO_H

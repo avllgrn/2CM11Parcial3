@@ -51,21 +51,6 @@ void Punto::modificaTusDatos(double x, double y){
     this->x = x;
     this->y = y;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Punto Punto::operator+(Punto Derecho){
     Punto R;
     R.modificaTuX(this->x + Derecho.dameTuX());
@@ -116,7 +101,6 @@ Punto Punto::operator--(void){//Prefijo
     R.modificaTuY(this->y);
     return R;
 }
-
 Punto Punto::operator--(int){//Posfijo
     Punto R;
     R.modificaTuX(this->x);
@@ -127,11 +111,11 @@ Punto Punto::operator--(int){//Posfijo
 }
 
 
-double distanciaEntre(Punto A, Punto B){
+double distanciaEntre(Punto P, Punto Q){
     return sqrt(
-        pow(B.dameTuY()-A.dameTuY(),2)
+        pow(Q.dameTuY()-P.dameTuY(),2)
         +
-        pow(B.dameTuX()-A.dameTuX(),2)
+        pow(Q.dameTuX()-P.dameTuX(),2)
     );
 }
 //Punto operator+(Punto Izquierdo, Punto Derecho){
@@ -148,16 +132,16 @@ double distanciaEntre(Punto A, Punto B){
 //}
 //bool operator==(Punto Izquierdo, Punto Derecho){
 //    return
-//        Izquierdo.dameTuX() == Derecho.dameTuX()
-//        &&
-//        Izquierdo.dameTuY() == Derecho.dameTuY()
+//       Izquierdo.dameTuX() == Derecho.dameTuX()
+//       &&
+//       Izquierdo.dameTuY() == Derecho.dameTuY()
 //    ;
 //}
 //bool operator!=(Punto Izquierdo, Punto Derecho){
 //    return
-//        Izquierdo.dameTuX() != Derecho.dameTuX()
-//        ||
-//        Izquierdo.dameTuY() != Derecho.dameTuY()
+//       Izquierdo.dameTuX() != Derecho.dameTuX()
+//       ||
+//       Izquierdo.dameTuY() != Derecho.dameTuY()
 //    ;
 //}
 istream& operator>>(istream& Izquierdo, Punto& Derecho){
@@ -186,8 +170,8 @@ ostream& operator<<(ostream& Izquierdo, Punto Derecho){
 //}
 Punto operator++(Punto& Unico){//Prefijo
     Punto R;
-    Unico.modificaTuX(Unico.dameTuX()+1);
-    Unico.modificaTuY(Unico.dameTuY()+1);
+    Unico.modificaTuX(Unico.dameTuX() + 1);
+    Unico.modificaTuY(Unico.dameTuY() + 1);
     R.modificaTuX(Unico.dameTuX());
     R.modificaTuY(Unico.dameTuY());
     return R;
@@ -196,7 +180,7 @@ Punto operator++(Punto& Unico,int){//Posfijo
     Punto R;
     R.modificaTuX(Unico.dameTuX());
     R.modificaTuY(Unico.dameTuY());
-    Unico.modificaTuX(Unico.dameTuX()+1);
-    Unico.modificaTuY(Unico.dameTuY()+1);
+    Unico.modificaTuX(Unico.dameTuX() + 1);
+    Unico.modificaTuY(Unico.dameTuY() + 1);
     return R;
 }

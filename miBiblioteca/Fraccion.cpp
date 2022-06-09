@@ -100,7 +100,7 @@ istream& operator>>(istream& Izquierdo, Fraccion& Derecho){
     Derecho.pideleAlUsuarioTusDatos();
     return Izquierdo;
 }
-ostream& operator<<(ostream& Izquierdo, Fraccion& Derecho){
+ostream& operator<<(ostream& Izquierdo, Fraccion Derecho){
     Derecho.muestraTusDatos();
     return Izquierdo;
 }
