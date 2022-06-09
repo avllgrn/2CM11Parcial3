@@ -1,27 +1,24 @@
 #include <iostream>
 #include <stdlib.h>
 #include "TPila.h"
+#include "Complejo.h"
 using namespace std;
 
 int main(void){
-    TPila<char> P;
-    if(P.estaVacia())
-        cout<<"Pila vacia"<<endl;
+    TPila<Complejo> P;
+    Complejo Objeto, Otro;
 
-    P.push('@');system("pause");
-    P.push('#');system("pause");
-    P.push('&');system("pause");
-    P.push('?');system("pause");
+    Objeto.modificaTusDatos(1,2);
+    P.push(Objeto);system("pause");
+    Objeto.modificaTusDatos(3,4);
+    P.push(Objeto);system("pause");
+    Objeto.modificaTusDatos(5,6);
+    P.push(Objeto);system("pause");
+    Objeto.modificaTusDatos(7,8);
+    P.push(Objeto);system("pause");
+    Objeto.modificaTusDatos(9,8);
+    P.push(Objeto);system("pause");
 
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    P.push('{');system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-    cout<<P.pop()<<endl;system("pause");
-
-    if(P.estaVacia())
-        cout<<"Pila vacia"<<endl;
 
     return 0;
 }
