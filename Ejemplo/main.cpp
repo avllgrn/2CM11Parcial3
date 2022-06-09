@@ -1,24 +1,50 @@
 #include <iostream>
 #include <stdlib.h>
 #include "TPila.h"
-#include "Complejo.h"
 using namespace std;
 
 int main(void){
-    TPila<Complejo> P;
-    Complejo Objeto, Otro;
+    TPila<char> P;
+    char d;
+    int op;
 
-    Objeto.modificaTusDatos(1,2);
-    P.push(Objeto);system("pause");
-    Objeto.modificaTusDatos(3,4);
-    P.push(Objeto);system("pause");
-    Objeto.modificaTusDatos(5,6);
-    P.push(Objeto);system("pause");
-    Objeto.modificaTusDatos(7,8);
-    P.push(Objeto);system("pause");
-    Objeto.modificaTusDatos(9,8);
-    P.push(Objeto);system("pause");
+    do{
+        system("cls");
+        cout<<"1. push"<<endl
+            <<"2. pop"<<endl
+            <<"3. libera Pila"<<endl
+            <<"4. Salir"<<endl
+            <<"Cual es tu opcion? ";
+        cin>>op;
+        system("cls");
+        switch(op){
+            case 1:
+                cout<<"Ingresa dato ";cin>>d;
+                P.push(d);
+                break;
+            case 2:
+                if(P.estaVacia()){
+                    cout<<"La pila esta vacia... =("<<endl;
+                }
+                else{
+                    d = P.pop();
+                    cout<<"Salio nodo con dato "<<d<<endl<<endl;
+                }
+                break;
+            case 3:
+                P.liberaPila();
+                break;
+            case 4:
+                cout<<"Adios! =)"<<endl<<endl;
+                break;
+            default :
+                cout<<"Opcion invalida...! =("<<endl<<endl;
+                break;
+        }
+        if(op!=4)
+            system("pause");
 
+    }while(op!=4);
 
     return 0;
 }
